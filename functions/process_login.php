@@ -19,8 +19,8 @@ if (!empty($messages)) {
 
 $email = mysqli_real_escape_string($link, $email);
 $query = " SELECT * "
-        . "FROM users "
-        . "WHERE user_email='$email';";
+    . "FROM users "
+    . "WHERE user_email='$email';";
 
 
 if (!$result = mysqli_query($link, $query)) {
@@ -29,7 +29,7 @@ if (!$result = mysqli_query($link, $query)) {
 }
 
 if (!mysqli_num_rows($result)) {
-    $messages[] = 'Wrong data';
+    $messages[] = 'Oops, somethings wrong 📛';
     return;
 }
 
@@ -46,6 +46,5 @@ if ($pw_match = password_verify($pw, $row['user_pw'])) {
     header('Location: blog.php');
     die();
 } else {
-    $messages[] = 'Wrong data';
+    $messages[] = 'Oops, somethings wrong 📛';
 }
-

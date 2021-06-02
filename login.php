@@ -12,6 +12,7 @@ require_once 'templates/header.php';
 <section class="jumbotron">
     <div class="container">
         <h1 class="jumbotron-heading text-center">Login</h1>
+        <h6 class="text-center">Everything starts somewhere</h6>
         <?php require_once 'templates/notifications.php'; ?>
         <div class="row">
             <div class="w-100 mx-auto">

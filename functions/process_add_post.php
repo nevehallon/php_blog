@@ -42,7 +42,7 @@ if ($_FILES['post_image']['error'] == UPLOAD_ERR_NO_FILE) {
     }
 
     if (strpos($_FILES['post_image']['type'], 'image/') !== 0) {
-        $messages[] = 'Plese ...only images';
+        $messages[] = 'please ...only images';
         return;
     }
 

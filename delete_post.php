@@ -2,7 +2,6 @@
 $title = "Delete post";
 require 'functions/config.php';
 require 'functions/blog_functions.php';
-// require 'templates/header.php';
 
 if (!isset($_GET['post_id'])) {
     header('Location: blog.php');

@@ -20,14 +20,14 @@ if (!$email) {
     $email = mysqli_real_escape_string($link, $email);
 
     $query = "SELECT * "
-            . "FROM users "
-            . "WHERE user_email= '$email';";
+        . "FROM users "
+        . "WHERE user_email= '$email';";
 
     if (!$result = mysqli_query($link, $query)) {
         $messages[] = 'An error...';
         return;
     }
-    
+
     if (mysqli_num_rows($result)) {
         $messages[] = 'This email alredy exist';
     }
@@ -60,7 +60,7 @@ if ($_FILES['profile_image']['error'] == UPLOAD_ERR_NO_FILE) {
     }
 
     if (strpos($_FILES['profile_image']['type'], 'image/') !== 0) {
-        $messages[] = 'Plese ...only images';
+        $messages[] = 'please ...only images';
         return;
     }
 
@@ -78,7 +78,7 @@ $email = mysqli_real_escape_string($link, $email);
 $pw = password_hash($pw, PASSWORD_DEFAULT);
 
 $query = "INSERT INTO users (user_name, user_pw, user_email, user_image) "
-        . "VALUES ('$fname', '$pw', '$email', '$image');";
+    . "VALUES ('$fname', '$pw', '$email', '$image');";
 
 if (!$result = mysqli_query($link, $query)) {
     $messages[] = 'An error...';
@@ -86,6 +86,3 @@ if (!$result = mysqli_query($link, $query)) {
 }
 
 $success = 'Registration process completed successfully';
-   
-
-

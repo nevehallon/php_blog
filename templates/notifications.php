@@ -1,10 +1,9 @@
-<?php if (isset($messages)): ?>
-    <div class="alert alert-danger" role="alert">
-        <?php foreach ($messages as $msg): ?>
+<?php if (isset($messages)) : ?>
+    <div class="alert alert-danger text-center" role="alert">
+        <?php foreach ($messages as $msg) : ?>
             <p><?= $msg; ?></p>
         <?php endforeach; ?>
     </div>
-<?php elseif (isset($success)): ?>
-    <p class="alert alert-success"><?= $success; ?></p>
+<?php elseif (isset($success)) : ?>
+    <p class="alert alert-success text-center"><?= $success; ?></p>
 <?php endif; ?>
-

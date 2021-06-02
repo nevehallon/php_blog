@@ -16,7 +16,7 @@ require_once 'templates/header.php';
 ?>
 <div class="card container-fluid post my-4">
     <?php if (!empty($post['image'])) : ?>
-        <img class="card-img-top my-0 mx-auto" width="100%" src="<?= $post['image']; ?>">
+        <img style="max-width: 100%; height: auto;" class="card-img-top my-0 mx-autoimg-fluid" width="100%" src="<?= $post['image']; ?>">
     <?php endif; ?>
     <div class="card-body">
         <h1 class="card-title text-center"><?= $post['title']; ?></h1>
