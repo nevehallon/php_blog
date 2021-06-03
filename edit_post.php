@@ -20,26 +20,31 @@ if (isset($_POST['edit_post'])) {
             ?>
             <?php if (validate_user() && $post['author_id'] == $_SESSION['user_id']) : ?>
                 <h1 class="jumbotron-heading text-center">Edit post</h1>
+                <h6 class="text-center">What do you want to change?</h6>
                 <div class="row">
                     <div class="w-100 mx-auto">
                         <form method="post" enctype="multipart/form-data">
                             <?php require_once 'templates/notifications.php'; ?>
                             <div>
                                 <p>
-                                    <label for="post-title" class="form-label">Title</label>
+                                    <label for="post-title" class="form-label"><span class="text-danger">*</span>Title:</label>
                                     <input value="<?= $title; ?>" id="post-title" type="text" name="post_title" class="form-control">
                                 </p>
-                                <p><label for="post-content" class="form-label">Content</label>
+                                <p><label for="post-content" class="form-label"><span class="text-danger">*</span>Content:</label>
                                     <textarea id="post-content" name="post_content" class="form-control"><?= $content; ?></textarea>
                                 </p>
                                 <p><label for="post-image" class="form-label">Update image</label>
                                     <input id="post-image" type="file" name="post_image" accept="image/*">
                                 </p>
-                                <p><input type="submit" value="Edit" name="edit_post" class="btn btn-primary">
+                                <p><input type="submit" value="Edit" name="edit_post" class="btn btn-primary btn-block">
                                 </p>
 
                             </div>
                         </form>
+
+                        <a href="blog.php" class="btn btn-warning btn-block">
+                            Cancel
+                        </a>
                     </div>
                 </div>
 
